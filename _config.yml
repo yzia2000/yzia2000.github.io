@@ -21,13 +21,16 @@
 title: Yousuf's Blog
 email: yzia2000@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Join my journey towards learning and implementing best software engineering
-  practices in full-stack application development, real time communication,
-  Software Engineering tools and open-source software contributions and configurations to
+  Join my journey towards learning and implementing best Software Engineering
+  practices in full-stack Application development, Real Time Communication,
+  Software Engineering tools and Open-Source software contributions and configurations to
   enhance development workflow.
 baseurl: "/blog" # the subpath of your site, e.g. /blog
 url: "https://yzia2000.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+show_excerpts: true
 github_username:  yzia2000
+linkedin_username: mohammad-yousuf-minhaj-zia-ab555396
+twitch_username: masteryoushi1234
 
 # Build settings
 theme: minima
