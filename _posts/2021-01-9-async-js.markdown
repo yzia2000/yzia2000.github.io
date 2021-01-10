@@ -1,0 +1,124 @@
+---
+layout: post
+title:  "Asynchronous Javascript"
+date:   2021-01-07 18:43:48 +0530
+categories: jekyll update
+---
+
+I began API development with NodeJS like most people do today.
+Even after thoroughly enjoying the buffet of npm packages and community
+support, I admit that I was certainly phased by the sudden buzz behind
+languages like Go and Rust whose claims to glory have been significantly
+improved performance and multi-threaded architecture. 
+
+A quick glance at the
+[StackOverflow 2020 Developer Survey](https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-languages-loved)
+reveals that though Javascript is the most commonly used programming language
+with JS based web frameworks occupying the market share by a mile over their
+competitors, its surprising to see that both Rust and Go are higher in
+the list of languages loved the most by developers. As someone who enjoys
+switching things up, I was wondering whether I should jump ship and migrate
+some of my existing projects but before doing that, I did not want to overlook
+the true potential behind Javascripts concurrency.
+
+## Asynchronous Single-Threaded: My understanding
+
+A quick Google search reveals that NodeJS is event-driven with asynchronous IO.
+A good way to understand that is through the event loop, which instead of
+explaining that myself, I would like to redirect you to this wonderful [video](https://www.youtube.com/watch?v=cCOL7MC4Pl0&t=855s)
+by Jake Archibad who explained the concept extremely well at JSConf.Asia in Singapore,
+(which is where I study).
+
+This functionality has been implemented using the c library [libuv](https://github.com/libuv/libuv). The idea
+is that while the main thread has to wait for events like database callbacks,
+the execution of the function can be deferred so the main thread can execute the
+rest of the pending code. This lead to the infamous Promises and callback hell:
+
+```javascript
+asyncFunc()
+    .then(() => {
+    // ...code...
+    anotherAsyncFunction()
+        .then(() => {
+            // ...more code...
+        })
+})
+```
+
+However, Javascript has evolved significantly and we now have a somewhat
+better syntax sugar with async/await.
+
+So what does this mean? It means that JS is single-threaded, however for
+most bottlenecking scenarios or those which expose parallelism, we can have concurrency
+without the horrors of multi-threaded design which from a development standpoint
+might not be worth the pain.
+
+## NodeJS demo
+
+```javascript
+function bottleneck(output) {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve(output);
+        }, 5000);
+    });
+}
+
+async function main() {
+    const res1 = await bottleneck("Done 1");
+    const res2 = await bottleneck("Done 2");
+    return [res1, res2];
+}
+```
+
+Lets look at a scenario. We have two bottlenecking functions that are stalling
+execution by 5 seconds. Await in Javascript allows you to wait for the
+functions to end before using the result of the return. By making main async
+the working thread would defer the execution of main until the individual
+promises resolve and work on other tasks giving an illusion of parallelism and
+efficiency. 
+
+However, a trained eye can tell that await does not help add any concurrency to
+the function main itself resulting in an execution time of over 10s. What if
+res1 and res2 were to be resolved concurrently. For that Javascript has the
+Promise.all() function that resolves a list of promises concurrently. That is
+extremely beneficial.
+
+```javascript
+function bottleneck(output) {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve(output);
+        }, 5000);
+    });
+}
+
+async function main() {
+    const res1 = await bottleneck("Done 1");
+    const res2 = await bottleneck("Done 2");
+    return await Promise.all([res1, res2]);
+}
+```
+res1 and res2 are resolved concurrently taking a little over 5 seconds for both
+promises to resolve. That is much better. Now we can benefit from efficiency
+without the hassles of multi-threaded programming.
+
+A great medium article that contains timing graphs and other scenarios
+like promise batching can be found [here](https://itnext.io/node-js-handling-asynchronous-operations-in-parallel-69679dfae3fc). 
+In my opinion its the best out there.
+
+## Conclusion
+Javascript is run single-threaded and I do feel that in certain, especial
+real-time, situations adopting these languages is worth the migration costs.
+However, Javascript with its current Asynchronous IO is certainly sufficient
+for most web applications out there and with the community support, you will
+most likely never go wrong continuing with Javascript.
+
+Through this search, I also realized the potential behind [libuv](https://github.com/libuv/libuv)
+and I might explore a c project with it soon.
+
+With that said, I certainly plan on learning Go and Rust in the near future
+to see what the buzz is about.
+
+If I said something wrong or offended anyone do raise your grievances at the
+[discussions forum](https://github.com/yzia2000/blog/discussions).
