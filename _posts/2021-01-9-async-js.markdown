@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Asynchronous Javascript"
-date:   2021-01-07 18:43:48 +0530
+date:   2021-01-09 18:43:48 +0530
 categories: jekyll update
 ---
 
