@@ -20,8 +20,4 @@ open-source tools for software development like neovim and its plethora of plugi
 and Linux configurations because I am addicted to that content. 
 Windows users please bear with me. 
 
-Along with my new years resolution package comes a promise to twitch stream
-every other day so I would really appreciate it if you could take the time to
-follow my [twitch account](https://www.twitch.tv/masteryoushi1234).
-
 I hope you enjoy the content I produce!
