@@ -5,6 +5,8 @@ date:   2021-01-07 18:43:48 +0530
 categories: jekyll update
 ---
 
+![My Photo](/assets/images/myphoto.jpg)
+
 Hi, it's great seeing you here on yet another beautiful day of 2021. This blog
 is all about ideas and discoveries in the realm of life and Software
 Engineering which I created as a part of my new years resolution to have

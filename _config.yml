@@ -35,6 +35,7 @@ linkedin_username: mohammad-yousuf-minhaj-zia-ab555396
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-assets
 
 # Exclude from processing.
 # The following items will not be processed, by default.
