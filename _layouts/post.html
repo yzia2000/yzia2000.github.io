@@ -3,7 +3,7 @@ layout: default
 ---
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
-    <img class="post-image" src="{{ page.image | relative_url }}"></img>
+    <img class="post-image" src="{{ post.image | relative_url }}"></img>
     <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
     <p class="post-meta">
       <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">

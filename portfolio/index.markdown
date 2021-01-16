@@ -3,7 +3,6 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: portfolio
-title: "Portfolio"
-list_title: "Projects"
+title: "Projects"
 categories: Portfolio
 ---
