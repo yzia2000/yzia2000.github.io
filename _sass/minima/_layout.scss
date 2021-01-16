@@ -259,7 +259,6 @@
     width: 100%;
     object-fit: contain;
     max-height: 30vh;
-    overflow: hidden;
 }
 
 
@@ -267,14 +266,46 @@
     Post card tricks
 */
 
-a {
+.card-list {
+    margin-left: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.card {
+    height: 300px;
+    width: 100%;
+    padding: 1.5rem;
+    border-radius: 16px;
+    background: #17141d;
+    box-shadow: -0.5rem 0 1rem #000;
+    display: flex;
+    flex-direction: column;
+    transition: .2s;
+    margin: 0;
+    clear: both;
+    position: relative;
+    text-overflow: ellipsis;
+}
+
+.card:focus-within~.card, .card:hover~.card {
+    transform: translateX(50px);
+}
+
+.card:hover {
+    transform: translateY(-1rem);
     text-decoration: none;
 }
 
-.card-list {
-    display: flex;
-    padding: 3rem;
-    overflow-x: scroll;
+
+.card-header {
+    margin-bottom: auto;
+}
+
+.card-header p {
+    font-size: 14px;
+    margin: 0 0 1rem;
+    color: #7a7a8c;
 }
 
 .card-list::-webkit-scrollbar {
@@ -291,45 +322,8 @@ a {
     background: linear-gradient(90deg,#201c29,#201c29 1px,#17141d 0,#17141d);
 }
 
-
-.card {
-    height: 300px;
-    width: 100px;
-    min-width: 250px;
-    padding: 1.5rem;
-    border-radius: 16px;
-    background: #17141d;
-    box-shadow: -1rem 0 3rem #000;
-    display: flex;
-    flex-direction: column;
-    transition: .2s;
-    margin: 0;
-    scroll-snap-align: start;
-    clear: both;
-    position: relative;
-}
-
-.card:focus-within~.card, .card:hover~.card {
-    transform: translateX(130px);
-}
-
-.card:hover {
-    transform: translateY(-1rem);
-}
-
-.card:not(:first-child) {
-    margin-left: -130px;
-}
-
-
-.card-header {
-    margin-bottom: auto;
-}
-
-.card-header p {
-    font-size: 14px;
-    margin: 0 0 1rem;
-    color: #7a7a8c;
+.card-list a {
+    color: #c6c6c6;
 }
 
 .card-header h2 {
@@ -342,89 +336,32 @@ a {
     cursor: pointer;
 }
 
-.card-header h2:hover {
-    background: linear-gradient(90deg,#ff8a00,#e52e71);
-    text-shadow: none;
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
-}
-
-.card-author {
+.excerpt {
     margin: 3rem 0 0;
     display: grid;
     grid-template-columns: 75px 1fr;
     align-items: center;
     position: relative;
-}
-
-.author-avatar {
-    grid-area: auto;
-    align-self: start;
-    position: relative;
-    box-sizing: border-box;
-}
-
-.author-avatar img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    filter: grayscale(100%);
-    display: block;
+    white-space: nowrap;
     overflow: hidden;
-    margin: 16px 10px;
+    text-overflow: ellipsis;
 }
 
-.author-name {
-    grid-area: auto;
-    box-sizing: border-box;
+.excerpt img {
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    filter: grayscale(30%);
+    display: relative;
+    left: 10px;
+    right: 10px;
 }
 
-.author-name-prefix {
-    font-style: normal;
-    font-weight: 700;
-    color: #7a7a8c;
-}
-
-.half-circle {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 60px;
-    height: 48px;
-    fill: none;
-    stroke: #ff8a00;
-    stroke-width: 8;
-    stroke-linecap: round;
-    pointer-events: none;
-}
-
-.tags {
-    margin: 1rem 0 2rem;
-    padding: .5rem 0 1rem;
-    line-height: 2;
-    margin-bottom: 0;
-}
-
-.tags a {
-    font-style: normal;
-    font-weight: 700;
-    font-size: .5rem;
-    color: #7a7a8c;
-    text-transform: uppercase;
-    font-size: .66rem;
-    border: 3px solid #28242f;
-    border-radius: 2rem;
-    padding: .2rem .85rem .25rem;
-    position: relative;
-}
-
-.tags a:hover {
-    background: linear-gradient(90deg,#ff8a00,#e52e71);
-    text-shadow: none;
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    -webkit-box-decoration-break: clone;
-    background-clip: text;
-    border-color: white;
+@media only screen and (max-width: 600px) {
+  .card-list {
+      display: block;
+  }
+  .card {
+      width:85%;
+  }
 }

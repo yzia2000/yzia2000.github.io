@@ -11,29 +11,29 @@ layout: default
 
     {%- if site.posts.size > 0 -%}
     <section class="card-list">
-        <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
-        <ul class="post-list">
-            {%- for post in site.posts -%}
-            {%- if post.categories contains "Blog" -%}
-            <article class="card">
-                <header class="card-header">
-                    {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-                    <p>{{ post.date | date: date_format }}</p>
-                    <h2>
-                        <a class="post-link" href="{{ post.url | relative_url }}">
-                            {{ post.title | escape }}
-                        </a>
-                    </h2>
-                </header>
-                <div class="card-author">
-                    {%- if site.show_excerpts -%}
-                    {{ post.excerpt }}
-                    {%- endif -%}
-                </div>
-            </article>
-            {%- endif -%}
-            {%- endfor -%}
-        </ul>
+        {%- for post in site.posts -%}
+        {%- if post.categories contains "Blog" -%}
+        <a class="card" href="{{ post.url | relative_url }}">
+            <header class="card-header">
+                {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+                <p>{{ post.date | date: date_format }}</p>
+                <h2 >
+                    {{ post.title | escape }}
+                </h2>
+            </header>
+            <div class="excerpt">
+                {%- if site.show_excerpts -%}
+                <p>{{ post.excerpt }}<p>
+                {%- endif -%}
+                {%- if post.image -%}
+                <img src="{{ post.image | relative_url }}" />
+                {%- else -%}
+                <img src="https://picsum.photos/300?random={{ post.title }}}">
+                {%- endif -%}
+            </div>
+        </a>
+        {%- endif -%}
+        {%- endfor -%}
     </section>
     {%- endif -%}
 </div>
