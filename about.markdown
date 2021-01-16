@@ -4,7 +4,9 @@ title: About
 permalink: /about/
 ---
 
-<img src="drawing.jpg" alt="drawing" src="{{ "/assets/images/myphoto.jpg" | relative_url }}" style="border-radius: 50%; border: 4px solid #fff; box-sizing: border-box; margin-right: 4%; width: 10rem; height: 10rem; object-fit: cover;" width="20%"/>
+<img src="drawing.jpg" alt="drawing" src="{{ "/assets/images/myphoto.jpg" |
+relative_url }}" style="border-radius: 100%; border: 4px solid #fff; width:
+10rem; height: 10rem; object-fit: cover;" width="20%"/>
 
 Hi, this is Yousuf! I am a computerphile majoring in Computer Engineering and
 minoring in Data Engineering at the National University of Singapore. I came across
