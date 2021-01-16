@@ -2,7 +2,7 @@
 layout: post
 title:  "Asynchronous Javascript"
 date:   2021-01-09 18:43:48 +0530
-categories: jekyll update
+categories: Blog
 ---
 
 I began API development with NodeJS like most people do today.

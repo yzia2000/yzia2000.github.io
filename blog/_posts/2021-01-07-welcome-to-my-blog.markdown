@@ -2,7 +2,7 @@
 layout: post
 title:  "Welcome to my blog!"
 date:   2021-01-07 18:43:48 +0530
-categories: jekyll update
+categories: Blog
 ---
 
 Hi, it's great seeing you here on yet another beautiful day of 2021. This blog
@@ -21,3 +21,4 @@ and Linux configurations because I am addicted to that content.
 Windows users please bear with me. 
 
 I hope you enjoy the content I produce!
+

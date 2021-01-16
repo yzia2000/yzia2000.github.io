@@ -2,7 +2,7 @@
 layout: post
 title:  "Docker with Typescript Node and Postgres"
 date:   2021-01-15 9:43:48 +0530
-categories: jekyll update
+categories: Blog
 ---
 
 I recently decided to bring docker to my development and deployment environment

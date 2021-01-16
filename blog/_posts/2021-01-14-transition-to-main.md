@@ -2,7 +2,7 @@
 layout: post
 title:  "Transitioning from master to main"
 date:   2021-01-14 15:27:48 +0530
-categories: jekyll update
+categories: Blog
 ---
 
 I have always been a huge advocate of taking politics away from Engineering as
