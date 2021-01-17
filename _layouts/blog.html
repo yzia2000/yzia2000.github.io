@@ -9,11 +9,13 @@ layout: default
 
     {{ content }}
 
+
+
     {%- if site.posts.size > 0 -%}
     <section class="card-list">
         {%- for post in site.posts -%}
         {%- if post.categories contains "Blog" -%}
-        <a class="card" href="{{ post.url | relative_url }}">
+        <a class="card blog-card" href="{{ post.url | relative_url }}">
             <header class="card-header">
                 {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
                 <p>{{ post.date | date: date_format }}</p>

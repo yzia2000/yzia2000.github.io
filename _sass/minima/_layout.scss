@@ -3,8 +3,9 @@
  */
 
 main {
-    background: #aaaaaa;
+    width: 100%;
     padding: 1.5rem;
+    box-sizing: border-box;
 }
 
 .site-header {
@@ -392,4 +393,16 @@ main {
     .card-list {
         grid-gap: 10px;
     }
+}
+
+.blog-card {
+    background: #17141d;
+}
+
+.portfolio-card {
+    background: #54000c;
+}
+
+.portfolio-card p {
+    color: #a8a8a8;
 }
