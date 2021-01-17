@@ -7,7 +7,7 @@ categories: Blog
 
 I began API development with NodeJS like most people do today.
 Even after thoroughly enjoying the buffet of npm packages and community
-support, I admit that I was certainly phased by the sudden buzz behind
+support, I admit that I was certainly phased by the sudden around behind
 languages like Go and Rust whose claims to glory have been significantly
 improved performance and multi-threaded architecture. 
 
