@@ -391,6 +391,7 @@ main {
     }
     
     .card-list {
+        grid-template-columns: 100%;
         grid-gap: 10px;
     }
 }

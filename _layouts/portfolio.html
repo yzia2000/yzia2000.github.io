@@ -9,27 +9,32 @@ layout: default
 
   {{ content }}
 
-  {%- if site.posts.size > 0 -%}
-    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
-    <ul class="post-list">
-      {%- for post in site.posts -%}
-      {%- if post.categories contains "Portfolio" -%}
-      <li>
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-        {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
+    {%- if site.posts.size > 0 -%}
+    <section class="card-list">
+        {%- for post in site.posts -%}
+        {%- if post.categories contains "Portfolio" -%}
+        <a class="card portfolio-card" href="{{ post.url | relative_url }}">
+            <header class="card-header">
+                {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+                <p>{{ post.date | date: date_format }}</p>
+                <h2 >
+                    {{ post.title | escape }}
+                </h2>
+            </header>
+            <div class="excerpt">
+                {%- if site.show_excerpts -%}
+                <p>{{ post.excerpt }}<p>
+                {%- endif -%}
+                {%- if post.image -%}
+                <img src="{{ post.image | relative_url }}" />
+                {%- else -%}
+                <img src="https://picsum.photos/300?random={{ post.title }}}">
+                {%- endif -%}
+            </div>
+        </a>
         {%- endif -%}
-      </li>
-      {%- endif -%}
-      {%- endfor -%}
-    </ul>
-
-  {%- endif -%}
+        {%- endfor -%}
+    </section>
+    {%- endif -%}
 
 </div>
