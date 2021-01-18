@@ -120,5 +120,5 @@ and I might explore a c project with it soon.
 With that said, I certainly plan on learning Go and Rust in the near future
 to see what the buzz is about.
 
-If I said something wrong or offended anyone do raise your grievances at the
+Please post your questions or feedback on the
 [discussions forum](https://github.com/yzia2000/blog/discussions).

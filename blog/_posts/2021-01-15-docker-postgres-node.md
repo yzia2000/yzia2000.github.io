@@ -208,7 +208,7 @@ with CI/CD pipelines. As a matter of fact we can deploy these containers very
 easily on demand using AWS EC2, GCP or Heroku. Moreover using tools like
 [Dokku](http://dokku.viewdocs.io/dokku/), you can setup a cool CD pipeline
 on a VPS infrastructure. I definitely plan on integrating docker with GitHub Actions
-for CI/CD. This will definitely help in achieving the dream of having loose coupled
+for CI/CD. That will help achieve the dream of having loosely coupled
 yet highly integrated environments for Software Engineering.
 
 If you have any queries or feedback on my configurations, do post it on the [forum](https://github.com/yzia2000/blog/discussions).
