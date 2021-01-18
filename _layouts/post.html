@@ -3,7 +3,11 @@ layout: default
 ---
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
-    <img class="post-image" src="{{ post.image | relative_url }}"></img>
+    {%- if page.image -%}
+    <img class="post-image" src="{{ page.image | relative_url }}"/>
+    {%- else -%}
+    <img class="post-image" src="https://picsum.photos/1000/300?random={{ post.title }}}" />
+    {%- endif -%}
     <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
     <p class="post-meta">
       <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
