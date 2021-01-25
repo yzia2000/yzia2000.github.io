@@ -31,9 +31,9 @@ the gaps in your explanation, review and simplify.
 
 This technique makes sense not only from a psychological standpoint - you
 most certainly don't want to disappoint a toddler - but also from a theoretical
-perspective. Explaining to a toddler might imply breaker high level knowledge
+perspective. Explaining to a toddler might imply breaking high level knowledge
 to low level chunks of knowledge that can actually be understood. This forces
-me to believe that maybe true understand of knowledge comes from understanding
+me to believe that maybe true understanding of knowledge comes from understanding
 of its derivation from the lower level constituents.
 
 ## Graphical Implication of the Feynman Technique
