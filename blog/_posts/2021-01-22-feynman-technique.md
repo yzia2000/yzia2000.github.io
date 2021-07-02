@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Feynman Technique"
+title:  "Yousuf's Feynman Technique"
 date:   2021-01-21 18:43:48 +0530
 categories: Blog
 ---
