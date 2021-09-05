@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Sourceror Proposal: Tail Call Optimizations"
+title: "Sourceror Compiler Proposal: Tail Call Optimizations"
 date: 2021-09-4 10:14:48 +0530
 categories: Portfolio
 ---
